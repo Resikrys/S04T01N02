@@ -1,4 +1,4 @@
-package controller;
+package cat.itacademy.s04.t01.n02.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloWorldController {
     @GetMapping("/HelloWorld")
     public String hello(@RequestParam(value = "name", defaultValue = "UNKNOWN") String name) {
-        return String.format("Hello %s!", name);
+        return String.format("Hello %s! You're running a Gradle project.", name);
     }
 
     @GetMapping({"/HelloWorld2", "/HelloWorld2/{name}"})
@@ -17,6 +17,6 @@ public class HelloWorldController {
         if (name == null || name.isEmpty()) {
             name = "UNKNOWN";
         }
-        return String.format("Hello %s!", name);
+        return String.format("Hello %s! You're running a Gradle project.", name);
     }
 }
